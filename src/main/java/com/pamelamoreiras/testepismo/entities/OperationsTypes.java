@@ -2,10 +2,14 @@ package com.pamelamoreiras.testepismo.entities;
 
 import com.pamelamoreiras.testepismo.enuns.Description;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class OperationsTypes {
 
     @Id
