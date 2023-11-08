@@ -6,4 +6,6 @@ import com.pamelamoreiras.testepismo.services.dtos.AccountServiceResponse;
 public interface AccountService {
 
     AccountServiceResponse create(final AccountServiceRequest accountServiceRequest);
+
+    AccountServiceResponse getAccount(final Integer id);
 }

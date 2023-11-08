@@ -29,4 +29,11 @@ public class AccountServiceImpl implements AccountService {
             throw new RuntimeException();
         }
     }
+
+    @Override
+    public AccountServiceResponse getAccount(final Integer id) {
+        final var accountToFind = this.accountRepository.findById(id);
+
+        return AccountConverter.accountsToAccountDTO(accountToFind.orElseThrow());
+    }
 }

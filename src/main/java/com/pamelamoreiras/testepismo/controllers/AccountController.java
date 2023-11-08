@@ -4,10 +4,7 @@ import com.pamelamoreiras.testepismo.services.AccountService;
 import com.pamelamoreiras.testepismo.services.dtos.AccountServiceRequest;
 import com.pamelamoreiras.testepismo.services.dtos.AccountServiceResponse;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/accounts")
@@ -19,5 +16,10 @@ public class AccountController {
     @PostMapping
     public AccountServiceResponse create(@RequestBody final AccountServiceRequest accountServiceRequest) {
         return accountService.create(accountServiceRequest);
+    }
+
+    @GetMapping("/{id}")
+    public AccountServiceResponse getAccount(@PathVariable final Integer id) {
+        return accountService.getAccount(id);
     }
 }
