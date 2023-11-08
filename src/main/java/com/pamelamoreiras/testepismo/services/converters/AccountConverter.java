@@ -1,21 +1,23 @@
 package com.pamelamoreiras.testepismo.services.converters;
 
 import com.pamelamoreiras.testepismo.entities.Accounts;
-import com.pamelamoreiras.testepismo.services.dtos.AccountDTO;
+import com.pamelamoreiras.testepismo.services.dtos.AccountServiceRequest;
+import com.pamelamoreiras.testepismo.services.dtos.AccountServiceResponse;
 
 public class AccountConverter {
 
-    public static Accounts accountDTOToAccounts(final AccountDTO accountDTO) {
+    public static Accounts accountDTOToAccounts(final AccountServiceRequest accountServiceRequest) {
         return Accounts.builder()
-                .id(accountDTO.getId())
-                .documentNumber(accountDTO.getDocumentNumber())
+                .id(accountServiceRequest.getId())
+                .documentNumber(accountServiceRequest.getDocumentNumber())
                 .build();
     }
 
-    public static AccountDTO accountsToAccountDTO(final Accounts accounts) {
-        return AccountDTO.builder()
+    public static AccountServiceResponse accountsToAccountDTO(final Accounts accounts) {
+        return AccountServiceResponse.builder()
                 .id(accounts.getId())
                 .documentNumber(accounts.getDocumentNumber())
+                .balance(accounts.getBalance())
                 .build();
     }
 }

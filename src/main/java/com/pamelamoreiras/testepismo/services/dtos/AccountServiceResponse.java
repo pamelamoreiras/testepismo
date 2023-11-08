@@ -9,8 +9,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class AccountDTO {
+public class AccountServiceResponse {
 
     private Integer id;
     private String documentNumber;
+    private Double balance;
 }

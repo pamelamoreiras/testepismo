@@ -1,7 +1,8 @@
 package com.pamelamoreiras.testepismo.controllers;
 
 import com.pamelamoreiras.testepismo.services.AccountService;
-import com.pamelamoreiras.testepismo.services.dtos.AccountDTO;
+import com.pamelamoreiras.testepismo.services.dtos.AccountServiceRequest;
+import com.pamelamoreiras.testepismo.services.dtos.AccountServiceResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,7 +17,7 @@ public class AccountController {
     private final AccountService accountService;
 
     @PostMapping
-    public AccountDTO create(@RequestBody final AccountDTO accountDTO) {
-        return accountService.create(accountDTO);
+    public AccountServiceResponse create(@RequestBody final AccountServiceRequest accountServiceRequest) {
+        return accountService.create(accountServiceRequest);
     }
 }

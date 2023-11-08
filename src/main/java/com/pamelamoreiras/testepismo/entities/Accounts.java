@@ -20,4 +20,5 @@ public class Accounts {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String documentNumber;
+    private Double balance;
 }
